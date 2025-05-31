@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B S S V PRASAD - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav>
-        <div class="logo">PRASAD'S</div>
-        <ul class="nav-links">
-            <li><a href="#home">About</a></li>
-            <li><a href="#achievements">Activities</a></li>
-            <li><a href="#visitingcard">Visting Card</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <nav id="navbar">
+        <div class="logo" onclick="scrollToTop()">PRASAD'S</div>
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link">About</a></li>
+            <li><a href="#achievements" class="nav-link">Activities</a></li>
+            <li><a href="#visitingcard" class="nav-link">Visiting Card</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 
@@ -25,11 +34,11 @@
     <section id="home">
         <div class="hero">
             <div class="hero-text">
-                <h1>Hello, I'm Banda Siva Sankara Vara Prasad </h1>
+                <h1>Hello, I'm Banda Siva Sankara Vara Prasad</h1>
                 <p>LIC, Health Insurance Agent and Accountant</p>
                 <div class="buttons">
                     <a href="#contact" class="btn btn-primary">Contact Me</a>
-                    <a href="#bio" class="btn btn-secondary">Learn More</a>
+                    <a href="#achievements" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -38,7 +47,8 @@
                 </div>
             </div>
         </div>
-        <!--Personal Info -->
+
+        <!-- Personal Info -->
         <div class="about-section">
             <h2>About Me</h2>
             <div class="about-content">
@@ -47,16 +57,12 @@
                     <p><i class="fas fa-user"></i> Banda Siva Sankara Vara Prasad</p>
                     <p><i class="fas fa-briefcase"></i> LIC, Health Insurance Agent and Accountant</p>
                     <p><i class="fas fa-envelope"></i> sivaprasad1968@yahoo.com</p>
-                    <p><i class="fas fa-phone"></i>+91 9347613339</p>
-                    <p><i class="fas fa-map-marker-alt"></i>Vijayawada</p>
+                    <p><i class="fas fa-phone"></i> +91 9347613339</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Vijayawada</p>
                 </div>
                 <div class="bio">
-                    <h3>Biography</h3> 
-                    <p>I am Banda Siva Sankara Vara Prasad, born on August 30, 1968, in Vijayawada, Krishna District, Andhra Pradesh.
-                    My academic journey began at AKTP High School, Vijayawada, where I completed my 10th standard. I pursued my intermediate education at Syed Appalsammy College and later earned my degree from Satavahana College, both located in Vijayawada.
-                    Driven by a passion for learning, I went on to complete my Master of Arts (MA) from Osmania University(Distance Education).
-                    Professionally, I work as a LIC & Health Insurance Agent, assisting clients with their financial and insurance needs and also serve as an part time Accountant.
-                    My career reflects a blend of academic diligence, professional integrity, and a commitment to service.</p>
+                    <h3>Biography</h3>
+                    <p>I am Banda Siva Sankara Vara Prasad, born on August 30, 1968, in Vijayawada, Krishna District, Andhra Pradesh. My academic journey began at AKTP High School, Vijayawada, where I completed my 10th standard. I pursued my intermediate education at Syed Appalsammy College and later earned my degree from Satavahana College, both located in Vijayawada. Driven by a passion for learning, I went on to complete my Master of Arts (MA) from Osmania University (Distance Education). Professionally, I work as a LIC & Health Insurance Agent, assisting clients with their financial and insurance needs and also serve as a part-time Accountant. My career reflects a blend of academic diligence, professional integrity, and a commitment to service.</p>
                 </div>
             </div>
             <div class="skills-education">
@@ -66,27 +72,31 @@
                     <span class="skill">Part Time Accountant</span>
                     <span class="skill">Real Estate Agent</span>
                     <span class="skill">Providing Assistance in getting Pan Card</span>
-                    <span class="skill">Filing of Income Tax & GST Returns </span>
+                    <span class="skill">Filing of Income Tax & GST Returns</span>
                 </div>
                 <div class="education">
                     <h3>Education</h3>
-                    <p>MA - Osmania University(Distance Education)</p>
-                    <p>Degree - Satavahana College </p>
+                    <p>MA - Osmania University (Distance Education)</p>
+                    <p>Degree - Satavahana College</p>
+                    <p>Intermediate - Syed Appalsammy College</p>
+                    <p>10th Standard - AKTP High School</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Activities & Achievements Page-->
-    <section>
-    <h2 id="achievements">My Activities</h2>
-    <div>
-        <div class="achievement-grid">
 
+<!-- Activities & Achievements Page -->
+    <section id="achievements">
+        <h2>My Activities</h2>
+        
+        
+        
+        <div class="achievement-grid">
             <div class="achievement-card" onclick="toggleImage(this)">
-                <div class="icon-circle"><i class="fas fa-circle"></i></div>
+                <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
                 <h3>LIC & Health Insurance Agent</h3>
-                <p>Dedicated to helping families safeguard their future with reliable financial and health protection plans. Working with <strong>LIC of India</strong> and <strong>STAR Health Insurance</strong>, I’ve guided numerous clients in securing life and medical insurance tailored to their needs and budgets.</p>
+                <p>Dedicated to helping families safeguard their future with reliable financial and health protection plans. Working with <strong>LIC of India</strong> and <strong>STAR Health Insurance</strong>, I've guided numerous clients in securing life and medical insurance tailored to their needs and budgets.</p>
                 <ul style="padding-left: 20px; margin: 10px 0;">
                     <li>✅ Term Plans, Endowment Policies, and Children's Education Plans</li>
                     <li>✅ Medical Insurance for Individuals, Families, and Senior Citizens</li>
@@ -98,10 +108,9 @@
                 <img class="achievement-image" src="healthinsurance.jpg" alt="LIC & Health Insurance Image">
                 <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
             </div>
-            
 
             <div class="achievement-card" onclick="toggleImage(this)">
-                <div class="icon-circle"><i class="fas fa-circle"></i></div>
+                <div class="icon-circle"><i class="fas fa-home"></i></div>
                 <h3>Real Estate Agent - APCRDA Layout Project</h3>
                 <p>Currently managing a prestigious residential layout project under <strong>Sonalika Projects</strong>, located at <strong>Vattigudipadu (Mallavalli)</strong> near Vijayawada.</p>
                 <ul style="padding-left: 20px; margin: 10px 0;">
@@ -117,26 +126,102 @@
                 <img class="achievement-image" src="realestate3.jpg" alt="Real Estate Project Image">
                 <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
             </div>
-            
 
-<!--
             <div class="achievement-card" onclick="toggleImage(this)">
-                <div class="icon-circle"><i class="fas fa-circle"></i></div>
-                <h3>Club Day</h3>
-                <p>1st Prize, Canva Banner Design
-Awarded 1st place at Lakireddy Bali Reddy College of Engineering for designing a banner for AI & DS Department Club Day, demonstrating creativity and design skills using Canva.</p>
-                <span class="year">Year 2025</span>
-                <img class="achievement-image" src="WhatsApp Image 2025-05-24 at 11.06.18_919752db.jpg" alt="Achievement 3 Image">
+                <div class="icon-circle"><i class="fas fa-calculator"></i></div>
+                <h3>Accounting & Tax Services</h3>
+                <p>Providing comprehensive accounting and tax services to individuals and small businesses, ensuring compliance and financial clarity.</p>
+                <ul style="padding-left: 20px; margin: 10px 0;">
+                    <li>✅ Income Tax Return Filing</li>
+                    <li>✅ GST Return Preparation & Filing</li>
+                    <li>✅ PAN Card Application Assistance</li>
+                    <li>✅ Financial Record Maintenance</li>
+                    <li>✅ Tax Planning & Advisory</li>
+                </ul>
+                <p>Expert guidance for all your financial documentation needs with timely and accurate service.</p>
+                <span class="year">Professional Service</span>
+                <img class="achievement-image" src="accounting.jpg" alt="Accounting Services Image">
                 <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
             </div>
-        </div>-->
-    </div>
+        </div>
+
+        <!-- Visiting Card Section moved here -->
+        <div id="visitingcard" class="visiting-card-section">
+            <h3>My Visiting Card</h3>
+            <img src="visiting card.jpg" alt="Visiting Card" class="activities-visiting-card">
+            <p class="visiting-card-text">Hello, I am <strong>B.S.S. Vara Prasad</strong>, Insurance Advisor from Life Insurance Corporation of India.<br>
+            Please feel free to call me on <strong>9347613339</strong> or write to me at <strong>sivaprasad1968@yahoo.com</strong>. Happy to help you!</p>
+        </div>
     </section>
-    <section id="visitingcard" class="visiting-card-section">
-        <img src="visiting card.jpg" alt="Visiting Card">
+
+
+
+
+
+    <!-- Activities & Achievements Page 
+    <section id="achievements">
+        <h2>My Activities</h2>
+        <div class="achievement-grid">
+            <div class="achievement-card" onclick="toggleImage(this)">
+                <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
+                <h3>LIC & Health Insurance Agent</h3>
+                <p>Dedicated to helping families safeguard their future with reliable financial and health protection plans. Working with <strong>LIC of India</strong> and <strong>STAR Health Insurance</strong>, I've guided numerous clients in securing life and medical insurance tailored to their needs and budgets.</p>
+                <ul style="padding-left: 20px; margin: 10px 0;">
+                    <li>✅ Term Plans, Endowment Policies, and Children's Education Plans</li>
+                    <li>✅ Medical Insurance for Individuals, Families, and Senior Citizens</li>
+                    <li>✅ Cashless Treatment & Instant Claim Support</li>
+                    <li>✅ Personalized advice and lifelong policy service</li>
+                </ul>
+                <p>My service is rooted in trust, transparency, and timely support — ensuring complete peace of mind for every client.</p>
+                <span class="year">LIC Agent Since 1996</span>
+                <img class="achievement-image" src="healthinsurance.jpg" alt="LIC & Health Insurance Image">
+                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
+            </div>
+
+            <div class="achievement-card" onclick="toggleImage(this)">
+                <div class="icon-circle"><i class="fas fa-home"></i></div>
+                <h3>Real Estate Agent - APCRDA Layout Project</h3>
+                <p>Currently managing a prestigious residential layout project under <strong>Sonalika Projects</strong>, located at <strong>Vattigudipadu (Mallavalli)</strong> near Vijayawada.</p>
+                <ul style="padding-left: 20px; margin: 10px 0;">
+                    <li>✅ 1600-acre Industrial Park (APIIC SEZ)</li>
+                    <li>✅ 150-acre Residential Layout (CRDA Approved)</li>
+                    <li>✅ 6.5 km to Outer Ring Road (ORR)</li>
+                    <li>✅ Nearby Govt. Hospital, MRO Office, and IIIT College</li>
+                    <li>✅ 25 km to Vijayawada International Airport</li>
+                    <li>✅ 70% Bank Loan Available with Spot Registration</li>
+                </ul>
+                <p>I assist clients with site visits, documentation, and securing bank loans — offering complete support for safe and smooth investment.</p>
+                <span class="year">Since 2024</span>
+                <img class="achievement-image" src="realestate3.jpg" alt="Real Estate Project Image">
+                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
+            </div>
+
+            <div class="achievement-card" onclick="toggleImage(this)">
+                <div class="icon-circle"><i class="fas fa-calculator"></i></div>
+                <h3>Accounting & Tax Services</h3>
+                <p>Providing comprehensive accounting and tax services to individuals and small businesses, ensuring compliance and financial clarity.</p>
+                <ul style="padding-left: 20px; margin: 10px 0;">
+                    <li>✅ Income Tax Return Filing</li>
+                    <li>✅ GST Return Preparation & Filing</li>
+                    <li>✅ PAN Card Application Assistance</li>
+                    <li>✅ Financial Record Maintenance</li>
+                    <li>✅ Tax Planning & Advisory</li>
+                </ul>
+                <p>Expert guidance for all your financial documentation needs with timely and accurate service.</p>
+                <span class="year">Professional Service</span>
+                <img class="achievement-image" src="accounting.jpg" alt="Accounting Services Image">
+                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visiting Card Section -
+    <div id="visitingcard" class="visiting-card-section">
+        <h2>My Visiting Card</h2>
+        <img src="visiting card.jpg" alt="Visiting Card" class="activities-visiting-card">
         <p>Hello, I am <strong>B.S.S. Vara Prasad</strong>, Insurance Advisor from Life Insurance Corporation of India.<br>
         Please feel free to call me on <strong>9347613339</strong> or write to me at <strong>sivaprasad1968@yahoo.com</strong>. Happy to help you!</p>
-    </section>
+        </div>-->
     
     <!-- Contact Page -->
     <section id="contact">
@@ -145,16 +230,17 @@ Awarded 1st place at Lakireddy Bali Reddy College of Engineering for designing a
                 <h2>Get In Touch</h2>
                 <h3>Contact Information</h3>
                 <p><i class="fas fa-envelope"></i> sivaprasad1968@yahoo.com</p>
-                <p><i class="fas fa-phone"></i> 9347613339 </p>
-                <p><i class="fas fa-map-marker-alt"></i> Vijayawada, India</p>
+                <p><i class="fas fa-phone"></i> +91 9347613339</p>
+                <p><i class="fas fa-map-marker-alt"></i> Vijayawada, Andhra Pradesh, India</p>
                 <h3>Connect with me</h3>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/b_s_s_v_prasad/?next=%2F" target = _blank><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/banda.srinivasakarthik" target = _blank><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/b_s_s_v_prasad/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/banda.srinivasakarthik" target="_blank"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
             <div class="contact-form">
-                <form action="https://formspree.io/f/xyzabcd" method="POST">
+                <h3>Send Message</h3>
+                <form id="contact-form" action="https://formspree.io/f/xyzabcd" method="POST">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <input type="text" name="subject" placeholder="Subject" required>
@@ -162,7 +248,6 @@ Awarded 1st place at Lakireddy Bali Reddy College of Engineering for designing a
                     <input type="hidden" name="_subject" value="New message from your portfolio site!">
                     <button type="submit">Send Message</button>
                 </form>
-                
             </div>
         </div>
     </section>
@@ -171,76 +256,164 @@ Awarded 1st place at Lakireddy Bali Reddy College of Engineering for designing a
     <footer>
         <div class="footer-content">
             <div class="footer-left">
-                <p>Banda Siva Sankara Vara Prasad </p>
-                <p> LIC, Health Insurance Agent, Accountant</p>
+                <p>&copy; 2024 Banda Siva Sankara Vara Prasad</p>
+                <p>LIC, Health Insurance Agent & Accountant</p>
             </div>
             <div class="footer-socials">
-                    <a href="https://www.instagram.com/b_s_s_v_prasad/?next=%2F" target = _blank><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/banda.srinivasakarthik" target = _blank><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/b_s_s_v_prasad/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/banda.srinivasakarthik" target="_blank"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
+
+    <!-- Fullscreen Overlay -->
+    <div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen()">
+        <img id="fullscreen-img" src="" alt="Fullscreen View">
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-    
-            // Contact form (already exists)
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const name = contactForm.querySelector('input[name="name"]').value;
-                    const email = contactForm.querySelector('input[name="email"]').value;
-                    const subject = contactForm.querySelector('input[name="subject"]').value;
-                    const message = contactForm.querySelector('textarea[name="message"]').value;
-    
-                    if (name && email && subject && message) {
-                        alert('Message sent successfully!');
-                        contactForm.querySelectorAll('input, textarea').forEach(input => input.value = '');
-                    } else {
-                        alert('Please fill in all fields.');
-                    }
-                });
+        // Loading screen
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('nav-scrolled');
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+                scrollToTopBtn.classList.remove('visible');
             }
-    
-            // Enable click on each achievement image to go fullscreen
-            document.querySelectorAll('.achievement-image').forEach(img => {
-                img.addEventListener('click', () => {
-                    document.getElementById('fullscreen-img').src = img.src;
-                    document.getElementById('fullscreen-overlay').style.display = 'flex';
-                });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
-    
+
+        // Active navigation link highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            if (name && email && subject && message) {
+                // Here you would normally send the form data to your server
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Toggle image function for achievement cards
         function toggleImage(card, fromButton = false) {
+            if (fromButton) {
+                event.stopPropagation();
+            }
+            
             const image = card.querySelector('.achievement-image');
             const button = card.querySelector('.image-toggle');
-            if (fromButton || image.style.display === 'block') {
-                image.style.display = image.style.display === 'none' ? 'block' : 'none';
-                button.textContent = image.style.display === 'none' ? 'Show Image' : 'Hide Image';
+            
+            if (image.style.display === 'block') {
+                image.style.display = 'none';
+                button.textContent = 'Show Image';
             } else {
                 image.style.display = 'block';
                 button.textContent = 'Hide Image';
             }
         }
-    
+
+        // Fullscreen image viewer
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('achievement-image')) {
+                document.getElementById('fullscreen-img').src = e.target.src;
+                document.getElementById('fullscreen-overlay').style.display = 'flex';
+            }
+        });
+
         function closeFullscreen() {
             document.getElementById('fullscreen-overlay').style.display = 'none';
             document.getElementById('fullscreen-img').src = '';
         }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Keyboard navigation for accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFullscreen();
+                const navLinks = document.getElementById('navLinks');
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    document.getElementById('mobileMenuToggle').classList.remove('active');
+                }
+            }
+        });
     </script>
-    <div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen()">
-        <img id="fullscreen-img" src="" alt="Fullscreen View">
-    </div>   
 </body>
 </html>
