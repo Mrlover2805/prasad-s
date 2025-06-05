@@ -1,4 +1,4 @@
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -14,7 +14,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Loading Animation */
+        /*Loading Animation */
         .loading-screen {
             position: fixed;
             top: 0;
@@ -481,22 +481,61 @@
             text-transform: uppercase;
         }
 
-        .achievement-image {
-            display: none;
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            width: 120px;
-            height: 120px;
+        /* Enhanced Single Image Styling */
+        .single-image-container {
+            margin-top: 20px;
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .achievement-image-single {
+            max-width: 100%;
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .achievement-image-single:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.3);
+        }
+        
+        /* Enhanced Multiple Images Styling */
+        .achievement-images-container {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
         }
 
-        .achievement-image:hover {
-            transform: scale(1.1);
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .achievement-image-multiple {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .achievement-image-multiple:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(255, 0, 0, 0.3);
+            z-index: 10;
         }
 
         .image-toggle {
@@ -519,39 +558,6 @@
             box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
         }
 
-        /* Visiting Card Section */
-        .visiting-card-section {
-            padding: 80px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .visiting-card-section img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .visiting-card-section img:hover {
-            transform: scale(1.02);
-        }
-
-        .visiting-card-section p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.2em;
-            color: #333;
-            line-height: 1.8;
-            background: #FFFFFF;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
         /* Contact Section */
         #contact {
             background: linear-gradient(135deg, #c2c7cd, #700808);
@@ -570,6 +576,38 @@
 
         .contact-info {
             flex: 1;
+        }
+
+         .contact-card {
+            flex: 1;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .contact-business-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-business-card img {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-business-card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .contact-info h3 {
@@ -594,73 +632,16 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .social-icons a:hover, .footer-socials a:hover {
+        .social-icons a:hover {
             transform: translateY(-5px) rotate(360deg);
-            background: #FF0000;
+            background: #d2d6bc;
             box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
         }
 
-        .contact-form {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            color: #FFFFFF;
-            padding: 40px;
-            border-radius: 15px;
-            flex: 1;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-form input, .contact-form textarea {
-            margin: 15px 0;
-            padding: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            font-size: 1em;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #FFFFFF;
-            backdrop-filter: blur(5px);
-        }
-
-        .contact-form input::placeholder, .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #FF0000;
-            outline: none;
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: none;
-        }
-
-        .contact-form button {
-            padding: 15px;
-            background: linear-gradient(45deg, #FF0000, #8B0000);
-            color: #FFFFFF;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
-        .contact-form button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+        .footer-socials a:hover {
+            transform: translateY(-5px) rotate(360deg);
+            background: #f00505;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
         }
 
         /* Footer */
@@ -715,6 +696,31 @@
 
         .fullscreen-overlay img:hover {
             transform: scale(1.02);
+        }
+
+        /* Enhanced Fullscreen Styling */
+        .fullscreen-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10001;
+        }
+        
+        .fullscreen-close {
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .fullscreen-close:hover {
+            background: rgba(255, 0, 0, 1);
+            transform: scale(1.1);
         }
 
         /* Scroll to Top Button */
@@ -842,6 +848,19 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            
+            .image-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 8px;
+            }
+                
+            .achievement-image-multiple {
+                height: 100px;
+            }
+                
+            .achievement-image-single {
+                height: 150px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -863,4 +882,3 @@
                 font-size: 1.2em;
             }
         }
-  

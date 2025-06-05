@@ -6,10 +6,10 @@
     <title>B S S V PRASAD - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">   
 </head>
 <body>
-    <!-- Loading Screen -->
+    <!-- Loading Screen --> 
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-spinner"></div>
     </div>
@@ -23,9 +23,9 @@
             <span></span>
         </div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home" class="nav-link">About</a></li>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about-content" class="nav-link">About</a></li>
             <li><a href="#achievements" class="nav-link">Activities</a></li>
-            <li><a href="#visitingcard" class="nav-link">Visiting Card</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
@@ -35,7 +35,7 @@
         <div class="hero">
             <div class="hero-text">
                 <h1>Hello, I'm Banda Siva Sankara Vara Prasad</h1>
-                <p>LIC, Health Insurance Agent and Accountant</p>
+                <p>LIC, Health Insurance Agent</p>
                 <div class="buttons">
                     <a href="#contact" class="btn btn-primary">Contact Me</a>
                     <a href="#achievements" class="btn btn-secondary">Learn More</a>
@@ -49,7 +49,7 @@
         </div>
 
         <!-- Personal Info -->
-        <div class="about-section">
+        <div class="about-section" id="about-content">
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="personal-info">
@@ -71,8 +71,9 @@
                     <span class="skill">LIC & Health Insurance Agent</span>
                     <span class="skill">Part Time Accountant</span>
                     <span class="skill">Real Estate Agent</span>
-                    <span class="skill">Providing Assistance in getting Pan Card</span>
-                    <span class="skill">Filing of Income Tax & GST Returns</span>
+                    <span class="skill">Pan Card Assistance</span>
+                    <span class="skill">Income Tax & GST Returns</span>
+                    <span class="skill">Pickles and Powders</span>
                 </div>
                 <div class="education">
                     <h3>Education</h3>
@@ -85,15 +86,12 @@
         </div>
     </section>
 
-
-<!-- Activities & Achievements Page -->
+    <!-- Activities & Achievements Page -->
     <section id="achievements">
         <h2>My Activities</h2>
-        
-        
-        
         <div class="achievement-grid">
-            <div class="achievement-card" onclick="toggleImage(this)">
+            <!-- LIC & Health Insurance - Single Image -->
+            <div class="achievement-card single-image">
                 <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
                 <h3>LIC & Health Insurance Agent</h3>
                 <p>Dedicated to helping families safeguard their future with reliable financial and health protection plans. Working with <strong>LIC of India</strong> and <strong>STAR Health Insurance</strong>, I've guided numerous clients in securing life and medical insurance tailored to their needs and budgets.</p>
@@ -105,11 +103,16 @@
                 </ul>
                 <p>My service is rooted in trust, transparency, and timely support — ensuring complete peace of mind for every client.</p>
                 <span class="year">LIC Agent Since 1996</span>
-                <img class="achievement-image" src="healthinsurance.jpg" alt="LIC & Health Insurance Image">
-                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
+                
+                <!-- Single Image Container -->
+                <div class="single-image-container" style="display: none;">
+                    <img class="achievement-image-single" src="healthinsurance.jpg" alt="LIC & Health Insurance Services" onclick="openFullscreen(this)">
+                </div>
+                <button class="image-toggle" onclick="toggleSingleImage(this.parentElement, event)">Show Image</button>
             </div>
 
-            <div class="achievement-card" onclick="toggleImage(this)">
+            <!-- Real Estate - Multiple Images -->
+            <div class="achievement-card multiple-images">
                 <div class="icon-circle"><i class="fas fa-home"></i></div>
                 <h3>Real Estate Agent - APCRDA Layout Project</h3>
                 <p>Currently managing a prestigious residential layout project under <strong>Sonalika Projects</strong>, located at <strong>Vattigudipadu (Mallavalli)</strong> near Vijayawada.</p>
@@ -123,11 +126,19 @@
                 </ul>
                 <p>I assist clients with site visits, documentation, and securing bank loans — offering complete support for safe and smooth investment.</p>
                 <span class="year">Since 2024</span>
-                <img class="achievement-image" src="realestate3.jpg" alt="Real Estate Project Image">
-                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
+    
+                <!-- Multiple Images Container -->
+                <div class="achievement-images-container" style="display: none;">
+                    <div class="image-grid">
+                        <img class="achievement-image-multiple" src="realestate3.jpg" alt="Real Estate Project Layout View" onclick="openFullscreen(this)">
+                        <img class="achievement-image-multiple" src="realestate4.jpg" alt="Site Development Progress" onclick="openFullscreen(this)">
+                    </div>
+                </div>
+                <button class="image-toggle" onclick="toggleMultipleImages(this.parentElement, event)">Show Images</button>
             </div>
 
-            <div class="achievement-card" onclick="toggleImage(this)">
+            <!-- Accounting & Tax Services - Single Image -->
+            <div class="achievement-card single-image">
                 <div class="icon-circle"><i class="fas fa-calculator"></i></div>
                 <h3>Accounting & Tax Services</h3>
                 <p>Providing comprehensive accounting and tax services to individuals and small businesses, ensuring compliance and financial clarity.</p>
@@ -138,90 +149,39 @@
                     <li>✅ Financial Record Maintenance</li>
                     <li>✅ Tax Planning & Advisory</li>
                 </ul>
-                <p>Expert guidance for all your financial documentation needs with timely and accurate service.</p>
+                <p>Expert guidance for all your financial documentation needs with timely and accurate service.</p><br><br>
                 <span class="year">Professional Service</span>
-                <img class="achievement-image" src="accounting.jpg" alt="Accounting Services Image">
-                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
-            </div>
-        </div>
-
-        <!-- Visiting Card Section moved here -->
-        <div id="visitingcard" class="visiting-card-section">
-            <h3>My Visiting Card</h3>
-            <img src="visiting card.jpg" alt="Visiting Card" class="activities-visiting-card">
-            <p class="visiting-card-text">Hello, I am <strong>B.S.S. Vara Prasad</strong>, Insurance Advisor from Life Insurance Corporation of India.<br>
-            Please feel free to call me on <strong>9347613339</strong> or write to me at <strong>sivaprasad1968@yahoo.com</strong>. Happy to help you!</p>
-        </div>
-    </section>
-
-
-
-
-
-    <!-- Activities & Achievements Page 
-    <section id="achievements">
-        <h2>My Activities</h2>
-        <div class="achievement-grid">
-            <div class="achievement-card" onclick="toggleImage(this)">
-                <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
-                <h3>LIC & Health Insurance Agent</h3>
-                <p>Dedicated to helping families safeguard their future with reliable financial and health protection plans. Working with <strong>LIC of India</strong> and <strong>STAR Health Insurance</strong>, I've guided numerous clients in securing life and medical insurance tailored to their needs and budgets.</p>
-                <ul style="padding-left: 20px; margin: 10px 0;">
-                    <li>✅ Term Plans, Endowment Policies, and Children's Education Plans</li>
-                    <li>✅ Medical Insurance for Individuals, Families, and Senior Citizens</li>
-                    <li>✅ Cashless Treatment & Instant Claim Support</li>
-                    <li>✅ Personalized advice and lifelong policy service</li>
-                </ul>
-                <p>My service is rooted in trust, transparency, and timely support — ensuring complete peace of mind for every client.</p>
-                <span class="year">LIC Agent Since 1996</span>
-                <img class="achievement-image" src="healthinsurance.jpg" alt="LIC & Health Insurance Image">
-                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
+                
+                <!-- Single Image Container -->
+                <div class="single-image-container" style="display: none;">
+                    <img class="achievement-image-single" src="accounting.jpg" alt="Accounting & Tax Services" onclick="openFullscreen(this)">
+                </div>
+                <button class="image-toggle" onclick="toggleSingleImage(this.parentElement, event)">Show Image</button>
             </div>
 
-            <div class="achievement-card" onclick="toggleImage(this)">
-                <div class="icon-circle"><i class="fas fa-home"></i></div>
-                <h3>Real Estate Agent - APCRDA Layout Project</h3>
-                <p>Currently managing a prestigious residential layout project under <strong>Sonalika Projects</strong>, located at <strong>Vattigudipadu (Mallavalli)</strong> near Vijayawada.</p>
+            <!-- Pickles and Powders Business - Single Image -->
+            <div class="achievement-card single-image">
+                <div class="icon-circle"><i class="fas fa-shopping-basket"></i></div>
+                <h3>Pickles and Powders Business</h3>
+                <p>RamaSarma Bramhina Caterers traditional homemade pickles and powders prepared with authentic recipes and quality ingredients, bringing the taste of home to every customer.</p>
                 <ul style="padding-left: 20px; margin: 10px 0;">
-                    <li>✅ 1600-acre Industrial Park (APIIC SEZ)</li>
-                    <li>✅ 150-acre Residential Layout (CRDA Approved)</li>
-                    <li>✅ 6.5 km to Outer Ring Road (ORR)</li>
-                    <li>✅ Nearby Govt. Hospital, MRO Office, and IIIT College</li>
-                    <li>✅ 25 km to Vijayawada International Airport</li>
-                    <li>✅ 70% Bank Loan Available with Spot Registration</li>
+                    <li>✅ Variety of Traditional Pickles</li>
+                    <li>✅ Homemade Spice Powders</li>
+                    <li>✅ Fresh and Preservative-Free</li>
+                    <li>✅ Authentic Telugu Flavors</li>
+                    <li>✅ Custom Orders Available</li>
                 </ul>
-                <p>I assist clients with site visits, documentation, and securing bank loans — offering complete support for safe and smooth investment.</p>
-                <span class="year">Since 2024</span>
-                <img class="achievement-image" src="realestate3.jpg" alt="Real Estate Project Image">
-                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
-            </div>
-
-            <div class="achievement-card" onclick="toggleImage(this)">
-                <div class="icon-circle"><i class="fas fa-calculator"></i></div>
-                <h3>Accounting & Tax Services</h3>
-                <p>Providing comprehensive accounting and tax services to individuals and small businesses, ensuring compliance and financial clarity.</p>
-                <ul style="padding-left: 20px; margin: 10px 0;">
-                    <li>✅ Income Tax Return Filing</li>
-                    <li>✅ GST Return Preparation & Filing</li>
-                    <li>✅ PAN Card Application Assistance</li>
-                    <li>✅ Financial Record Maintenance</li>
-                    <li>✅ Tax Planning & Advisory</li>
-                </ul>
-                <p>Expert guidance for all your financial documentation needs with timely and accurate service.</p>
-                <span class="year">Professional Service</span>
-                <img class="achievement-image" src="accounting.jpg" alt="Accounting Services Image">
-                <button class="image-toggle" onclick="toggleImage(this.parentElement, true)">Show Image</button>
+                <p>Made with love and traditional methods, ensuring the authentic taste of Andhra cuisine.<br>For Order Contact 9347613339</p>
+                <span class="year">Family Business</span>
+                
+                <!-- Single Image Container -->
+                <div class="single-image-container" style="display: none;">
+                    <img class="achievement-image-single" src="https://via.placeholder.com/400x200/FF0000/FFFFFF?text=Pickles+%26+Powders" alt="Pickles and Powders" onclick="openFullscreen(this)">
+                </div>
+                <button class="image-toggle" onclick="toggleSingleImage(this.parentElement, event)">Show Image</button>
             </div>
         </div>
     </section>
-
-    <!-- Visiting Card Section -
-    <div id="visitingcard" class="visiting-card-section">
-        <h2>My Visiting Card</h2>
-        <img src="visiting card.jpg" alt="Visiting Card" class="activities-visiting-card">
-        <p>Hello, I am <strong>B.S.S. Vara Prasad</strong>, Insurance Advisor from Life Insurance Corporation of India.<br>
-        Please feel free to call me on <strong>9347613339</strong> or write to me at <strong>sivaprasad1968@yahoo.com</strong>. Happy to help you!</p>
-        </div>-->
     
     <!-- Contact Page -->
     <section id="contact">
@@ -238,16 +198,11 @@
                     <a href="https://www.facebook.com/banda.srinivasakarthik" target="_blank"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
-            <div class="contact-form">
-                <h3>Send Message</h3>
-                <form id="contact-form" action="https://formspree.io/f/xyzabcd" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="text" name="subject" placeholder="Subject" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <input type="hidden" name="_subject" value="New message from your portfolio site!">
-                    <button type="submit">Send Message</button>
-                </form>
+            <div class="contact-card">
+                <h3>Business Card</h3>
+                <div class="contact-business-card">
+                    <img src="visiting card.jpg" alt="B.S.S.Vara Prasad - LIC Insurance Advisor Business Card" onclick="openFullscreen(this)">
+                </div>
             </div>
         </div>
     </section>
@@ -256,9 +211,10 @@
     <footer>
         <div class="footer-content">
             <div class="footer-left">
-                <p>&copy; 2024 Banda Siva Sankara Vara Prasad</p>
-                <p>LIC, Health Insurance Agent & Accountant</p>
-            </div>
+                <p>If you'd like to create a blog similar to this, feel free to contact me at bandakarthik16@gmail.com.</p>
+                <p>&copy; 2025 BANDA KARTHIK. All rights reserved.</p>
+                <!--<p>Unauthorized use and/or duplication of this material without express and written permission from this site's author is strictly prohibited</p>
+            --> </div>
             <div class="footer-socials">
                 <a href="https://www.instagram.com/b_s_s_v_prasad/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/banda.srinivasakarthik" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -269,6 +225,9 @@
     <!-- Fullscreen Overlay -->
     <div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen()">
         <img id="fullscreen-img" src="" alt="Fullscreen View">
+        <div class="fullscreen-controls">
+            <button class="fullscreen-close" onclick="closeFullscreen()">✕</button>
+        </div>
     </div>
 
     <!-- Scroll to Top Button -->
@@ -277,125 +236,79 @@
     </button>
 
     <script>
-        // Loading screen
+        // Loading Screen
         window.addEventListener('load', function() {
-            const loadingScreen = document.getElementById('loadingScreen');
             setTimeout(() => {
-                loadingScreen.style.opacity = '0';
+                document.getElementById('loadingScreen').style.opacity = '0';
                 setTimeout(() => {
-                    loadingScreen.style.display = 'none';
+                    document.getElementById('loadingScreen').style.display = 'none';
                 }, 500);
-            }, 1000);
+            }, 1500);
         });
 
-        // Mobile menu toggle
-        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-            const navLinks = document.getElementById('navLinks');
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-            this.classList.toggle('active');
         });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            
-            if (window.scrollY > 100) {
-                navbar.classList.add('nav-scrolled');
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                navbar.classList.remove('nav-scrolled');
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
-
-        // Smooth scrolling for navigation links
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ 
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
                 }
+                // Close mobile menu after clicking
+                navLinks.classList.remove('active');
             });
         });
 
-        // Active navigation link highlighting
+        // Navbar Scroll Effect
         window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+
+            // Update active nav link
+            const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
             
-            let currentSection = '';
+            let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
-                if (window.scrollY >= sectionTop) {
-                    currentSection = section.getAttribute('id');
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + currentSection) {
+                if (link.getAttribute('href') === '#' + current) {
                     link.classList.add('active');
                 }
             });
-        });
 
-        // Contact form handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-
-            if (name && email && subject && message) {
-                // Here you would normally send the form data to your server
-                alert('Thank you for your message! I will get back to you soon.');
-                this.reset();
+            // Show/hide scroll to top button
+            const scrollBtn = document.getElementById('scrollToTop');
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('visible');
             } else {
-                alert('Please fill in all fields.');
+                scrollBtn.classList.remove('visible');
             }
         });
 
-        // Toggle image function for achievement cards
-        function toggleImage(card, fromButton = false) {
-            if (fromButton) {
-                event.stopPropagation();
-            }
-            
-            const image = card.querySelector('.achievement-image');
-            const button = card.querySelector('.image-toggle');
-            
-            if (image.style.display === 'block') {
-                image.style.display = 'none';
-                button.textContent = 'Show Image';
-            } else {
-                image.style.display = 'block';
-                button.textContent = 'Hide Image';
-            }
-        }
-
-        // Fullscreen image viewer
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('achievement-image')) {
-                document.getElementById('fullscreen-img').src = e.target.src;
-                document.getElementById('fullscreen-overlay').style.display = 'flex';
-            }
-        });
-
-        function closeFullscreen() {
-            document.getElementById('fullscreen-overlay').style.display = 'none';
-            document.getElementById('fullscreen-img').src = '';
-        }
-
-        // Scroll to top function
+        // Scroll to Top Function
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -403,17 +316,130 @@
             });
         }
 
-        // Keyboard navigation for accessibility
+        // Function to toggle single image
+        function toggleSingleImage(card, event) {
+            event.stopPropagation();
+            
+            const imageContainer = card.querySelector('.single-image-container');
+            const toggleButton = card.querySelector('.image-toggle');
+
+            if (imageContainer.style.display === 'none' || imageContainer.style.display === '') {
+                // Show image
+                imageContainer.style.display = 'block';
+                toggleButton.textContent = 'Hide Image';
+                
+                // Add smooth fade-in animation
+                imageContainer.style.opacity = '0';
+                imageContainer.style.transition = 'opacity 0.5s ease';
+                
+                setTimeout(() => {
+                    imageContainer.style.opacity = '1';
+                }, 10);
+                
+            } else {
+                // Hide image
+                imageContainer.style.opacity = '0';
+                toggleButton.textContent = 'Show Image';
+                
+                setTimeout(() => {
+                    imageContainer.style.display = 'none';
+                }, 500);
+            }
+        }
+        
+        // Function to toggle multiple images for real estate
+        function toggleMultipleImages(card, event) {
+            event.stopPropagation();
+    
+            const imagesContainer = card.querySelector('.achievement-images-container');
+            const toggleButton = card.querySelector('.image-toggle');
+    
+            if (imagesContainer.style.display === 'none' || imagesContainer.style.display === '') {
+                // Show images
+                imagesContainer.style.display = 'block';
+                toggleButton.textContent = 'Hide Images';
+        
+                // Add smooth slide-down animation
+                imagesContainer.style.maxHeight = '0';
+                imagesContainer.style.overflow = 'hidden';
+                imagesContainer.style.transition = 'max-height 0.7s ease, opacity 0.5s ease';
+                imagesContainer.style.opacity = '0';
+        
+                setTimeout(() => {
+                    imagesContainer.style.maxHeight = '800px';
+                    imagesContainer.style.opacity = '1';
+                }, 10);
+        
+            } else {
+                // Hide images
+                imagesContainer.style.maxHeight = '0';
+                imagesContainer.style.opacity = '0';
+                toggleButton.textContent = 'Show Images';
+        
+                setTimeout(() => {
+                    imagesContainer.style.display = 'none';
+                }, 700);
+            }
+        }
+
+        // Function to open image in fullscreen
+        function openFullscreen(img) {
+            const overlay = document.getElementById('fullscreen-overlay');
+            const fullscreenImg = document.getElementById('fullscreen-img');
+    
+            fullscreenImg.src = img.src;
+            fullscreenImg.alt = img.alt;
+            overlay.style.display = 'flex';
+    
+            // Add fade-in effect
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 10);
+        }
+
+        // Function to close fullscreen
+        function closeFullscreen() {
+            const overlay = document.getElementById('fullscreen-overlay');
+            overlay.style.opacity = '0';
+    
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        }
+
+        // Add keyboard support for fullscreen
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeFullscreen();
-                const navLinks = document.getElementById('navLinks');
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    document.getElementById('mobileMenuToggle').classList.remove('active');
-                }
             }
         });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('.personal-info, .bio, .skills, .education, .achievement-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Console log for debugging
+        console.log('Portfolio website loaded successfully!');
     </script>
 </body>
 </html>
